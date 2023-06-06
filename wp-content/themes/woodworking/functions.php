@@ -15,11 +15,13 @@ class wood_theme_handler {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array($this, 'wpdocs_theme_name_scripts') );
-		register_nav_menus(array('primary-menu' => 'Top-menu'));
-		add_theme_support('post-thumbnails');
-		add_theme_support('custom-header');
-		
-	}
+		add_action( 'after_setup_theme', array($this, 'register_my_menu' ) );
+		add_action( 'after_setup_theme', array($this, 'featureImage' ) );
+		add_action( 'after_setup_theme', array($this, 'headerLogo' ) );	
+		add_action( 'after_setup_theme', array($this, 'customBackground' ) );	
+		add_action( 'after_setup_theme', array($this, 'widget' ) );	
+		add_action( 'after_setup_theme', array($this, 'addExcerpt' ) );	
+	} 
 
 	/**
 	 * Add script and style
@@ -31,7 +33,49 @@ class wood_theme_handler {
 	/**
 	 * To add menu
 	 */
-	
+	public function register_my_menu() {
+		register_nav_menus( array( 'primary-menu' => 'Top-menu') );
+	}
+
+	/**
+	 * To add thumbnail option in admin
+	 */
+	public function featureImage() {
+		add_theme_support('post-thumbnails');
+	}
+
+	/**
+	 * To add Header Image
+	 */
+	public function headerLogo()
+	{
+		add_theme_support('custom-header');
+	}
+
+	/**
+	 * To add widget in admin
+	 */
+	public function widget(){
+		register_sidebar(
+			array(
+				'name' => 'Sidebar',
+				'id' => 'Sidebar'
+			)
+			);
+	}
+	/**
+	 * To add custom background image
+	 */
+	public function customBackground() {
+		add_theme_support('custom-background');
+	}
+
+	/**
+	 * To Add Excerpt option
+	 */
+	public function addExcerpt() {
+		add_post_type_support('page', 'excerpt');
+	}
 
 }
 

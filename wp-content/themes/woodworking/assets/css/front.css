@@ -168,6 +168,24 @@ img.aligncenter {
 
 #menu li {
 	float: left;
+	position: relative;
+}
+
+.sub-menu{
+	position: absolute;
+	top: 100%;
+	opacity: 0;
+	visibility: hidden;
+	width: 120px;
+}
+.sub-menu li {
+	list-style: none;
+}
+
+.menu>li:hover .sub-menu{
+	opacity: 1;
+	visibility: visible;
+	transition: 1s;
 }
 
 #menu a {
@@ -394,4 +412,14 @@ img.aligncenter {
 .commentlist li
 {
 	list-style: none;
+}
+
+.widget_block
+{
+	list-style:none ;
+}
+
+.notFound p {
+	text-align: center	;
+	font-size: 30px;
 }

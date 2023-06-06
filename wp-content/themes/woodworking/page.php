@@ -10,6 +10,7 @@ get_header();
 </div>
 <div class="entry">
 <?php
+the_excerpt();
 the_content()		
 ?>
 </div>

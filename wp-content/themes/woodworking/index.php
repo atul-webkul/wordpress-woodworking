@@ -12,7 +12,7 @@ get_header();
 						<div class="post">
 							<h2 class="title"><a href="#"><?php the_title()?></a></h2>
 							<p class="meta">Posted by <a href="#"><?php the_author()?></a> on <?php echo get_the_date() ?>
-								&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="<?php the_permalink()?>" class="permalink">Full article</a></p>
+								&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments <?php echo  get_comments_number()?></a> &nbsp;&bull;&nbsp; <a href="<?php the_permalink()?>" class="permalink">Full article</a></p>
 							<div class="entry">
 								<p><img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),'large')[0]?> " width="143" height="143" alt="" class="alignleft border" /> <p>
 									<?php 
@@ -27,57 +27,7 @@ get_header();
 
 					</div>
 					<!-- end #content -->
-					<div id="sidebar">
-						<div id="search">
-							<h2>Search</h2>
-							<form method="get" action="">
-								<fieldset>
-									<input type="text" name="s" id="search-text" size="15" value="enter keywords here..." />
-									<input type="submit" id="search-submit" value="GO" />
-								</fieldset>
-							</form>
-						</div>
-						<ul>
-							<li>
-								<h2>Aliquam tempus</h2>
-								<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
-							</li>
-							<li>
-								<h2>Categories</h2>
-								<ul>
-									<li><a href="#">Aliquam libero</a></li>
-									<li><a href="#">Consectetuer adipiscing elit</a></li>
-									<li><a href="#">Metus aliquam pellentesque</a></li>
-									<li><a href="#">Suspendisse iaculis mauris</a></li>
-									<li><a href="#">Urnanet non molestie semper</a></li>
-									<li><a href="#">Proin gravida orci porttitor</a></li>
-								</ul>
-							</li>
-							<li>
-								<h2>Blogroll</h2>
-								<ul>
-									<li><a href="#">Aliquam libero</a></li>
-									<li><a href="#">Consectetuer adipiscing elit</a></li>
-									<li><a href="#">Metus aliquam pellentesque</a></li>
-									<li><a href="#">Suspendisse iaculis mauris</a></li>
-									<li><a href="#">Urnanet non molestie semper</a></li>
-									<li><a href="#">Proin gravida orci porttitor</a></li>
-								</ul>
-							</li>
-							<li>
-								<h2>Archives</h2>
-								<ul>
-									<li><a href="#">Aliquam libero</a></li>
-									<li><a href="#">Consectetuer adipiscing elit</a></li>
-									<li><a href="#">Metus aliquam pellentesque</a></li>
-									<li><a href="#">Suspendisse iaculis mauris</a></li>
-									<li><a href="#">Urnanet non molestie semper</a></li>
-									<li><a href="#">Proin gravida orci porttitor</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<!-- end #sidebar -->
+					<?php get_sidebar()?>
 					<div style="clear: both;">&nbsp;</div>
 				</div>
 			</div>

@@ -15,10 +15,11 @@ Released   : 20110708
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Woodworking by FCT</title>
+<title><?php bloginfo('name');?><?php wp_title();?> <?php if (is_front_page()) { echo "| ";  bloginfo('description'); } ?></title>
  <?php wp_head();?>
 </head>
-<body>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="wrapper">
 	<div id="wrapper-bgbtm">
 		<div id="header">
@@ -30,7 +31,7 @@ Released   : 20110708
 		<!-- end #header -->
 		<div id="menu">
 			<?php	
-			wp_nav_menu(array('theme_location' => 'primary_menu'));
+			wp_nav_menu(array('theme_location' => 'primary-menu'));
 			?>
 		</div>
 		<!-- end #menu -->
