@@ -2,11 +2,16 @@
 //Template Name:Others
 
 get_header();
+if($_GET['title'] != ""){
+	$searchData=$_GET['title'];
+}
 $wpmews= array(
     'post_type' => 'news',
     'post_status' => 'publish',
+	's' => $searchData
 );
 $newsquery= new WP_Query($wpmews);
+
 ?>
 
 

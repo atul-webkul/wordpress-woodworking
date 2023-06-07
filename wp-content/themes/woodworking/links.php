@@ -1,5 +1,5 @@
 <?php 
-//Template Name: Links
+//Template Name : Links
 get_header();
 $cat=get_categories(array('taxonomy' => 'category'));
 // echo "<pre>";
@@ -11,7 +11,6 @@ $terms = get_terms( array(
     'order' => 'ASC',
     'parent' => 0,
 ) );    
-
 // echo "<pre>";
 // print_r($terms);
 ?>
@@ -23,7 +22,6 @@ $terms = get_terms( array(
 					<div class="categories">
                         <?php
                         foreach($cat as $catvalue){
-                            
                         ?>
   
                         <div class="post">
@@ -36,6 +34,7 @@ $terms = get_terms( array(
                     </div>
 					</div>
 					<!-- end #content -->
+                    <?php get_sidebar();?>
 					<div style="clear: both;">&nbsp;</div>
 				</div>
 			</div>
@@ -61,15 +60,11 @@ $terms = get_terms( array(
                     </div>
 					</div>
 					<!-- end #content -->
+                   
 					<div style="clear: both;">&nbsp;</div>
 				</div>
 			</div>
-
         </div>
-<?php 
-
-
-?>
 <?php
 get_footer();
 ?>

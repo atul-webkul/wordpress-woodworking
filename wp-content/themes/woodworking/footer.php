@@ -1,6 +1,6 @@
 		<!-- end #page -->
 		<div id="footer">
-			<p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+			<p><?php the_field('copyright',18)?></p>
 		</div>
 		<!-- end #footer -->
 	</div>
