@@ -24,7 +24,7 @@ class wood_theme_handler {
 	} 
 
 	/**
-	 * Add script and style
+	 * Add script and style	
 	 */
 	public function wpdocs_theme_name_scripts() {
 		wp_enqueue_style( 'wood-script', WKMP_PLUGIN_URL.'/assets/css/front.css' );

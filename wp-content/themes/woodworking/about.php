@@ -1,7 +1,6 @@
 <?php
 //Template Name:About
 get_header();
-
 if(isset($_POST['savenews'])){
  $id=wp_insert_post(
     array(
@@ -14,20 +13,21 @@ if(isset($_POST['savenews'])){
     wp_set_object_terms($id,$_POST['newscat'],'news_category');
 }
 ?>
-<div class="content">
-    <h4>Add Post</h4>
-    <form method="post">
+<div id="page-bgtop">
+    <div id="page-bgbtm">
+        <div id="content">
+        <h4>Add Post</h4>
+        <form method="post">
         <div>
         <label for="">Name</label>
         </div>
         <input type="text" name="ntitle" id="">
-      
-<br><br>
+        <br><br>
         <div>
         <label for="">Description</label>
         </div>
         <textarea name="" id="" cols="30" rows="10" name="ndes"></textarea>
-<br><br>
+        <br><br>
 
 <div>Select Category</div>       
 <div>
@@ -48,18 +48,17 @@ if(isset($_POST['savenews'])){
             ?>
      </select>
         </div>
-        
-        
 <br><br>
         <div>
         <button name="savenews">Save</button>
         </div>
-        
-     
     </form>
+        </div>
+         <!-- end #content -->
+        <?php get_sidebar();?>
+        <div style="clear: both;">&nbsp;</div>
+    </div>
 </div>
-
-
 <?php
 get_footer();
 ?>  
