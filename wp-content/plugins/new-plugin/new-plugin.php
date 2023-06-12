@@ -20,14 +20,20 @@ defined( 'WKMP_PLUGIN_FILE' ) || define( 'WKMP_PLUGIN_FILE', plugin_dir_path( __
 defined( 'WKMP_PLUGIN_URL' ) || define( 'WKMP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
   function wpac_plugin_scripts(){
-     wp_enqueue_style('wpac-css', WKMP_PLUGIN_URL. 'assets/css/main.css');
-     wp_enqueue_script('wpac-js', WKMP_PLUGIN_URL. 'assets/js/main.js');
+     wp_enqueue_style('wpac-css', WKMP_PLUGIN_URL. 'assets/css/custom.css');
+     wp_enqueue_script('wpac-js', WKMP_PLUGIN_URL. 'assets/js/custom.js');
   }
 
 add_action('wp_enqueue_scripts' , 'wpac_plugin_scripts' );
 
-
 require plugin_dir_path(__FILE__) .'inc/settings.php';
+
+require plugin_dir_path(__FILE__). 'inc/user_setting.php';
+
+
+
+
+
 
 
 ?>

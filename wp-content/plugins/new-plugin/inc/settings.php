@@ -6,14 +6,16 @@ function wpac_settings_page_html(){
 ?>
 <div class="wrap">
    <h1><?php echo esc_html(get_admin_page_title())?></h1>
-   <form action="actions.php" method="post">
+   <form action="" method="post">
    <?php
     settings_fields('wpac-setttings');
     do_settings_sections('wpac-settings');
     submit_button('save Changes')   ?>
    </form>
 </div>
+
 <?php
+
 }
 
 function wpac_register_menu_page(){
@@ -31,7 +33,7 @@ function wpac_plugin_settings(){
 
    add_settings_field('wpac_like_label_field', 'Like Button Label', 'wpac_like_lablel_field_cb' ,'wpac-settings','wpac_label_settings_section',);
 
-   add_settings_field('wpac_disike_label_field', 'Dislike Button Label', 'wpac_dislike_lablel_field_cb' ,'wpac-settings','wpac_label_settings_section',);
+   add_settings_field('wpac_dislike_label_field', 'Dislike Button Label', 'wpac_dislike_lablel_field_cb' ,'wpac-settings','wpac_label_settings_section',);
 }
 add_action('admin_init', 'wpac_plugin_settings');
 
